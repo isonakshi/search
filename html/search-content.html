@@ -1,0 +1,106 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="javascripts/search-content.js"></script>
+
+ <style type="text/css">
+#search-results ul li {display: inline; padding: .1em 2em; line-height:10px;}
+/*#search-results ul p {display: inline; padding: .2em 2em; line-height:10px;}*/
+
+#search-results ul {padding: 0 0;}
+
+
+#search-results ul li a
+{
+text-decoration: none;
+padding: 0 0;
+}
+
+#search-results ul li a.nopad
+{
+text-decoration: none;
+padding: 0 0;
+line-height:10px;
+}
+
+#search-results ul li a:hover
+{
+text-decoration:underline; 
+}
+
+li.discussion {
+ background-image: url('../images/discussion.png' );
+ background-repeat:no-repeat;
+}
+li.document {
+ background-image: url('../images/doc.png' );
+ background-repeat:no-repeat;
+}
+li.update {
+ background-image: url('../images/status.png' );
+ background-repeat:no-repeat;
+}
+li.post {
+ background-image: url('../images/blog.png' );
+ background-repeat:no-repeat;
+}
+
+.withborder {
+       border: 1px solid black;
+       /*  border-style: rigid;
+       border-width: thin;       
+        sets border width on all sides*/
+        border-color: rgb(160,160,160); 
+        line-height:1;
+        /*text-align: justify; */
+}
+
+.align
+{
+ margin-left:0.7cm;
+}
+/*div
+{
+line-height:1;
+}
+p.small 
+{
+ line-height:70%;
+}
+p {
+    border: 0 none;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+username {
+        white-space:nowrap;
+        vertical-align:top;
+        text-align:right;
+        width:auto;
+        color:DodgerBlue;
+    }*/
+
+
+</style>
+<h3 align="center">Search </h3>
+<table align="center">
+ <tr>
+  <td>
+   <input type="text" id="query" size="66"/>
+  </td>
+  <td>
+   <button id="search" type="Submit">Search</button>
+  </td>
+ </tr>
+</table>
+
+<div id="search-info" style="display: none">
+<div class="withborder">
+<h4>Search Results</h4>  
+<hr size="1" color="lightgrey"> 
+    <div id="search-results"></div>
+ </div>
+
