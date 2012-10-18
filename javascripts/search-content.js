@@ -95,7 +95,7 @@ function expand(id){
 	
 	
 	});
-	console.log(discussionexpand);
+	console.log("Html Content"discussionexpand);
 	$(".content").show();
 	 $(".content").html(discussionexpand);
 	
