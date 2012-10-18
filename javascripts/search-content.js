@@ -67,7 +67,7 @@ function expand(id){
 			console.log("Error in get: "+response.error.message);
 		}
 		else{
-			var request = response.data.container.get();
+			var request = response.data.messages.get( ) ;
 			request.execute(function(response) {
 				if(!response.error) {
 				
