@@ -59,7 +59,7 @@ function expand(id){
 	$('.firstdiv').css('background-color', '#FFFFFF');
 	$('#div_'+id).css('background-color', '#F2F2F2');
 	console.log("Expand Row Id::: "+ id);
-	
+	var discussionexpand="";
 	var request = osapi.jive.core.discussions.get({id: id});
 	request.execute(function(response) { 
 		console.log("Expanding discussion response is " + JSON.stringify(response.data));
@@ -70,9 +70,20 @@ function expand(id){
 		else{
 			var request = response.data.messages.get( ) ;
 			request.execute(function(response) {
+			var result = response.data;
 				if(!response.error) {
-				
-					console.log("Expanding discussion container response is " + JSON.stringify(response.data));
+					
+					 $.each(result, function(index, row) {
+							console.log("Expanding discussion container response is " + JSON.stringify(response.data));
+							if(row.answer==true){
+								discussionexpand +='<div>';
+								discussionexpand +='<ul>';
+								discussionexpand +='<li>This is answer</li>';
+								discussionexpand +='</ul>';
+								discussionexpand +='</div>';
+								}
+					
+					)}
 				
 				}
 			
@@ -84,7 +95,7 @@ function expand(id){
 	
 	});
 	$(".content").show();
-	
+	 $(".content").html(discussionexpand);
 	
 
 }
