@@ -56,6 +56,7 @@ return outMonth;
 function expand(id){
 
 $(".content").show();
+$('.firstdiv').css('background-color', '#E6E6E6');
 console.log("Expand Row Id::: "+ id);
 }
 // Perform a search and display the results
@@ -133,7 +134,7 @@ function search() {
                	{
 					var discussionID = (url.substring(url.lastIndexOf("/"))).substr(1);
                	     // discussion +='<table border="1">';             
-                    discussion +='<div>';
+                    discussion +='<div id="div_'+discussionID+'" class="firstdiv">';
                     //discussion +='<p line-height:70%>';
                    // discussion +='<ol>';
 					discussion +='<ul>';
