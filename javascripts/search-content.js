@@ -56,8 +56,8 @@ return outMonth;
 function expand(id){
 
 	
-	$('.firstdiv').css('background-color', '#E6E6E6');
-	$('#div_'+id).css('background-color', '#E6E6E6');
+	$('.firstdiv').css('background-color', '#FFFFFF');
+	$('#div_'+id).css('background-color', '#F2F2F2');
 	console.log("Expand Row Id::: "+ id);
 	
 	var request = osapi.jive.core.discussions.get({id: id});
@@ -163,7 +163,7 @@ function search() {
                	{
 					var discussionID = (url.substring(url.lastIndexOf("/"))).substr(1);
                	     // discussion +='<table border="1">';             
-                    discussion +='<div id="dvi_'+discussionID+'" class="firstdiv">';
+                    discussion +='<div id="div_'+discussionID+'" class="firstdiv">';
                     //discussion +='<p line-height:70%>';
                    // discussion +='<ol>';
 					discussion +='<ul>';
