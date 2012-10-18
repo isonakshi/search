@@ -8,7 +8,7 @@ function init() {
 }
 $("li.image-button").live('click', function () {
       var curRowId = $(this).attr("id");
-	console.log("Row Id"+ curRowId);
+	expand(curRowId);
     });
  function monthConvert(d){
 
@@ -53,10 +53,10 @@ break;
 }
 return outMonth;
 }
-function expand(){
-var curRowId = $(this).attr("id");
+function expand(id){
 
-console.log("Row Id"+ curRowId);
+
+console.log("Expand Row Id::: "+ curRowId);
 }
 // Perform a search and display the results
 function search() {
