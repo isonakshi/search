@@ -55,9 +55,36 @@ return outMonth;
 }
 function expand(id){
 
-$(".content").show();
-$('#div_'+id).css('background-color', '#E6E6E6');
-console.log("Expand Row Id::: "+ id);
+	$(".content").show();
+	$('#div_'+id).css('background-color', '#E6E6E6');
+	console.log("Expand Row Id::: "+ id);
+	
+	var request = osapi.jive.core.discussions.get({id: id});
+	request.execute(function(response) { 
+		console.log("Expanding discussion response is " + JSON.stringify(response.data));
+		
+		if (response.error) {
+			console.log("Error in get: "+response.error.message);
+		}
+		else{
+			var request = response.data.container.get();
+			request.execute(function(response) {
+				if(!response.error) {
+				
+					console.log("Expanding discussion container response is " + JSON.stringify(response.data));
+				
+				}
+			
+			
+			});
+		
+		}
+	
+	
+	});
+	
+	
+
 }
 // Perform a search and display the results
 function search() {
@@ -114,7 +141,7 @@ function search() {
             
             $.each(rows, function(index, row) {
             	url=row.resources.html.ref;
-		subject=row.subject;
+				subject=row.subject;
                	contentSummary=row.contentSummary;
                 author=row.author.name;
                 createdDate=row.creationDate;                   
@@ -126,15 +153,15 @@ function search() {
                 myDate=row.modificationDate.substr(0,10);                  
                 myDate=myDate.split("-"); 
                 dateM=myDate[1];
-		var finalMonth=monthConvert(dateM);
-		var newDate=finalMonth+" "+myDate[2]+","+myDate[0]; 
+				var finalMonth=monthConvert(dateM);
+				var newDate=finalMonth+" "+myDate[2]+","+myDate[0]; 
 
 
                if(row.type=="discussion")
                	{
 					var discussionID = (url.substring(url.lastIndexOf("/"))).substr(1);
                	     // discussion +='<table border="1">';             
-                    discussion +='<div id="div_'+discussionID+'" class="firstdiv">';
+                    discussion +='<div id="dvi_'+discussionID+'" class="firstdiv">';
                     //discussion +='<p line-height:70%>';
                    // discussion +='<ol>';
 					discussion +='<ul>';
