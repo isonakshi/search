@@ -82,6 +82,9 @@ function expand(id){
 								discussionexpand +='<li>This is answer</li>';
 								discussionexpand +='</ul>';
 								discussionexpand +='</div>';
+								console.log("Html Content:: "+discussionexpand);
+								$(".content").show();
+								$(".content").html(discussionexpand);
 								}
 					
 					});
@@ -95,9 +98,7 @@ function expand(id){
 	
 	
 	});
-	console.log("Html Content:: "+discussionexpand);
-	$(".content").show();
-	 $(".content").html(discussionexpand);
+	
 	
 
 }
