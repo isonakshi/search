@@ -2,11 +2,11 @@
 function init() {
    
     $("#search").click(search);
-	$(".image-button").click(expand);
+	//$(".image-button").click(expand);
     gadgets.window.adjustHeight();
    
 }
-$(".image-button").click(function () {
+$("li.image-button").live('click', function () {
       var curRowId = $(this).attr("id");
 	console.log("Row Id"+ curRowId);
     });
