@@ -83,7 +83,7 @@ function expand(id){
 								discussionexpand +='</div>';
 								}
 					
-					)}
+					});
 				
 				}
 			
