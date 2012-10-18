@@ -6,7 +6,10 @@ function init() {
     gadgets.window.adjustHeight();
    
 }
-
+$("image-button").click(function () {
+      var curRowId = $(this).attr("id");
+	console.log("Row Id"+ curRowId);
+    });
  function monthConvert(d){
 
   var outMonth="";
