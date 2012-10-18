@@ -82,7 +82,7 @@ function expand(id){
 								discussionexpand +='<li><span style="color:Green;font-weight:bold">Correct Answer</span> </li>';
 								discussionexpand +='<li><img src="'+ row.author.avatarURL + '" width=\'25px\' height=\'25px\' border=\'0\'/> by ';
 								discussionexpand +='<a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+row.author.username+'>'+row.author.name+'</a>';
-								discussionexpand +='on  '+ row.creationDate+ '</li>';
+								discussionexpand +='on  ' + row.creationDate+ '</li>';
 								discussionexpand +='<li>'+row.content.text+ '</li>';
 								discussionexpand +='</ul>';
 								discussionexpand +='</div>';
