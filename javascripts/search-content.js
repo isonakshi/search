@@ -128,7 +128,7 @@ function search() {
                     //discussion +='<p line-height:70%>';
                    // discussion +='<ol>';
 		    discussion +='<ul>';
-                    discussion +='<li class="discussion"><a href="'+url+'"target="_apps">'+subject+'</a> <button type="button" style="position:fixed; right: 30px;">Expand</button></li>';
+                    discussion +='<li class="discussion"><a href="'+url+'"target="_apps">'+subject+'</a> <button type="button" style="position:relative; right: 30px;">Expand</button></li>';
                     discussion +='</ul>';  
                     
                     discussion +='<font size="2" color="grey">';               
