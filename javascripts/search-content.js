@@ -2,6 +2,7 @@
 function init() {
    
     $("#search").click(search);
+	$("#image-button").click(expand);
     gadgets.window.adjustHeight();
    
 }
@@ -49,7 +50,11 @@ break;
 }
 return outMonth;
 }
+function expand(){
+var curRowId = $(this).attr("id");
 
+console.log("Row Id"+ curRowId);
+}
 // Perform a search and display the results
 function search() {
     
