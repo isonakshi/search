@@ -123,13 +123,14 @@ function search() {
 
                if(row.type=="discussion")
                	{
+					var discussionID = (url.substring(url.lastIndexOf("/"))).substr(1);
                	     // discussion +='<table border="1">';             
                     discussion +='<div>';
                     //discussion +='<p line-height:70%>';
                    // discussion +='<ol>';
-		    discussion +='<ul>';
+					discussion +='<ul>';
                     discussion +='<li class="discussion"><a href="'+url+'" target="_apps">'+subject+'</a></li>';
-                    discussion +='<a href="'+url+'"><input type="button" name="Expand" value="Expand" style="float: right;"/></a>';
+                    discussion +='<li><span id="'+discussionID+'" class="expand">Expand</li>';
                     //discussion +=<button type="button" style="float: right;" <a href="'+url+'"target="_apps">Expand</a></button></li>';
                     discussion +='</ul>';  
                     
