@@ -88,7 +88,7 @@ function expand(id){
 								discussionexpand +='</div>';
 								
 								}
-								f(row.helpful){
+								if(row.helpful){
 								console.log("I'm inside expand if");
 								discussionexpand +='<div>';
 								discussionexpand +='<ul>';
