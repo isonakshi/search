@@ -130,7 +130,7 @@ function search() {
                    // discussion +='<ol>';
 					discussion +='<ul>';
                     discussion +='<li class="discussion"><a href="'+url+'" target="_apps">'+subject+'</a></li>';
-                    discussion +='<li><span id="'+discussionID+'" class="expand">Expand</li>';
+                    discussion +='<li class="expand"><span id="'+discussionID+'" >Expand</li>';
                     //discussion +=<button type="button" style="float: right;" <a href="'+url+'"target="_apps">Expand</a></button></li>';
                     discussion +='</ul>';  
                     
