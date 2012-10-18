@@ -55,8 +55,8 @@ return outMonth;
 }
 function expand(id){
 
-
-console.log("Expand Row Id::: "+ curRowId);
+$(".content").show();
+console.log("Expand Row Id::: "+ id);
 }
 // Perform a search and display the results
 function search() {
