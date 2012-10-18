@@ -130,7 +130,7 @@ function search() {
                    // discussion +='<ol>';
 					discussion +='<ul>';
                     discussion +='<li class="discussion"><a href="'+url+'" target="_apps">'+subject+'</a></li>';
-                    discussion +='<span id="'+discussionID+'" ><li ><input type="image" value="button" src="../images/expand.png" alt="Expand Button" ></li></span>';
+                    discussion +='<span id="'+discussionID+'" ><li ><input type="image" id="image-button" alt="Expand Button" ></li></span>';
                     //discussion +=<button type="button" style="float: right;" <a href="'+url+'"target="_apps">Expand</a></button></li>';
                     discussion +='</ul>';  
                     
