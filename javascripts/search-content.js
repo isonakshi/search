@@ -128,8 +128,8 @@ function search() {
                     //discussion +='<p line-height:70%>';
                    // discussion +='<ol>';
 		    discussion +='<ul>';
-                    discussion +='<li class="discussion"><a href="'+url+'"target="_apps">'+subject+'</a></li>';
-                    discussion +='<a href="'+url+'"><input type="button" name="Expand" value="Expand" style="float: right;"/></a>
+                    discussion +='<li class="discussion"><a href="'+url+'" target="_apps">'+subject+'</a></li>';
+                    discussion +='<a href="'+url+'"><input type="button" name="Expand" value="Expand" style="float: right;"/></a>';
                     //discussion +=<button type="button" style="float: right;" <a href="'+url+'"target="_apps">Expand</a></button></li>';
                     discussion +='</ul>';  
                     
