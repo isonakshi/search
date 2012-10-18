@@ -75,7 +75,8 @@ function expand(id){
 					
 					 $.each(result, function(index, row) {
 							console.log("Expanding discussion container response is " + JSON.stringify(response.data));
-							if(row.answer=true){
+							if(row.answer){
+								consloe.log("I'm inside expand if");
 								discussionexpand +='<div>';
 								discussionexpand +='<ul>';
 								discussionexpand +='<li>This is answer</li>';
@@ -94,6 +95,7 @@ function expand(id){
 	
 	
 	});
+	console.log(discussionexpand);
 	$(".content").show();
 	 $(".content").html(discussionexpand);
 	
