@@ -75,7 +75,7 @@ function expand(id){
 					
 					 $.each(result, function(index, row) {
 							console.log("Expanding discussion container response is " + JSON.stringify(response.data));
-							if(row.answer==true){
+							if(row.answer=true){
 								discussionexpand +='<div>';
 								discussionexpand +='<ul>';
 								discussionexpand +='<li>This is answer</li>';
