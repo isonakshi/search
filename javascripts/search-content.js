@@ -197,10 +197,11 @@ function search() {
                     discussion +='</font>';
                      // discussion +='</ol>';
                     //discussion +='</p>';
-                    discussion +='</div>';
+                    
                    // discussion +='</table>';
                          
                    discussion +='<hr size="1" color="lightgrey">';
+				   discussion +='</div>';
                   // discussion +='<br>';
                                      
                }
