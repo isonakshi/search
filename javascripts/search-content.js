@@ -55,7 +55,7 @@ return outMonth;
 }
 function expand(id){
 
-	$(".content").show();
+	
 	$('.firstdiv').css('background-color', '#FFFFFF');
 	$('#div_'+id).css('background-color', '#E6E6E6');
 	console.log("Expand Row Id::: "+ id);
@@ -83,6 +83,7 @@ function expand(id){
 	
 	
 	});
+	$(".content").show();
 	
 	
 
