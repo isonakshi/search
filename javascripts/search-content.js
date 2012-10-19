@@ -71,6 +71,7 @@ function expand(id){
 		var discussionresult=response.data;
 		$.each(discussionresult, function(index, row) {
 		if(row.question){
+			console.log("I'm inside Root Message Div");
 			rootmessage +='<div>';
 			rootmessage +='<ul>';
 			rootmessage +='<li ><a href="'+row.message.resources.html.ref+'" target="_apps">'+row.message.subject+'</a></li>';
