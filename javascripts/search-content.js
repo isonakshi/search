@@ -286,7 +286,7 @@ function search() {
 			var request = osapi.jive.core.documents.get({id: docID});
 
 request.execute(function(response) { 
-console.log("Document is"+response.data);
+console.log("Document is"+JSON.stringify(response.data));
 });
                      document +='<div>';
 		    document +='<ul>';
