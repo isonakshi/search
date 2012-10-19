@@ -287,6 +287,10 @@ function search() {
 
 request.execute(function(response) { 
 console.log("Document is"+JSON.stringify(response.data));
+var request=response.data.html.get();
+request.execute(function(response) {
+console.log("HTML is"+JSON.stringify(response.data));
+});
 });
                      document +='<div>';
 		    document +='<ul>';
