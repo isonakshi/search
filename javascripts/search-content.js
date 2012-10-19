@@ -239,18 +239,21 @@ function search() {
                    // discussion +='<ol>';
 					discussion +='<ul>';
                     discussion +='<li class="discussion"><a href="'+url+'" target="_apps">'+subject+'</a></li>';
+					discussion +='<font size="2" color="grey">'; 
+					discussion +='<li>Created by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+username+'>'+author+'</a></li>';
+					discussion +='</ul>';
                     discussion +='<li class="image-button" id="'+discussionID+'" ></li>';
                     //discussion +=<button type="button" style="float: right;" <a href="'+url+'"target="_apps">Expand</a></button></li>';
                     discussion +='</ul>';  
                     
-                    discussion +='<font size="2" color="grey">';               
-                    discussion +='<ul>';                   
+                                  
+                    //discussion +='<ul>';                   
                     //discussion +='<li>&nbsp;</li>';
                     //  discussion +='<li>Created by<img src="'+ avatar + '" width=\'25px\' height=\'25px\' border=\'0\'/>
-                    discussion +='<li>Created by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+username+'>'+author+'</a></li>';
+                    
                     //console.log("Author: "+author);                   
-                    discussion +='</ul>';
-                    discussion +='</font>';
+                    
+                    //discussion +='</font>';
                     
                     discussion +='<font size="2" color="black">';                                    
                     discussion +='<ul>';                   
