@@ -60,6 +60,7 @@ function expand(id){
 	$('#div_'+id).css('background-color', '#F2F2F2');
 	console.log("Expand Row Id::: "+ id);
 	var discussionexpand="";
+	var myDate="";
 	var request = osapi.jive.core.discussions.get({id: id});
 	request.execute(function(response) { 
 		console.log("Expanding discussion response is " + JSON.stringify(response.data));
@@ -75,27 +76,38 @@ function expand(id){
 					
 					 $.each(result, function(index, row) {
 							console.log("Expanding discussion container response is " + JSON.stringify(response.data));
+							
 							if(row.answer){
+									myDate=row.creationDate.substr(0,10);                  
+									myDate=myDate.split("-"); 
+									dateM=myDate[1];
+									var finalMonth=monthConvert(dateM);
+									var newDate=finalMonth+" "+myDate[2]+","+myDate[0]; 
 									console.log("I'm inside expand if");
 									discussionexpand +='<div>';
 									discussionexpand +='<ul>';
 									discussionexpand +='<li><span style="color:Green;font-weight:bold">Correct Answer</span> </li>';
-									discussionexpand +='<li><img src="'+ row.author.avatarURL + '" width=\'25px\' height=\'25px\' border=\'0\'/> by ';
+									discussionexpand +='<li><img src="'+ row.author.avatarURL + '" width=\'25px\' height=\'25px\' border=\'0\'/> by &nbsp;';
 									discussionexpand +='<a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+row.author.username+'>'+row.author.name+'</a>';
-									discussionexpand +='on  ' + row.creationDate+ '</li>';
+									discussionexpand +='on &nbsp; ' + newDate+ '</li>';
 									discussionexpand +='<li>'+row.content.text+ '</li>';
 									discussionexpand +='</ul>';
 									discussionexpand +='</div>';
 								
 								}
 								else if(row.helpful){
+									myDate=row.creationDate.substr(0,10);                  
+									myDate=myDate.split("-"); 
+									dateM=myDate[1];
+									var finalMonth=monthConvert(dateM);
+									var newDate=finalMonth+" "+myDate[2]+","+myDate[0]; 
 									console.log("I'm inside expand if");
 									discussionexpand +='<div>';
 									discussionexpand +='<ul>';
 									discussionexpand +='<li><span style="color:Yellow;font-weight:bold">Helpful Answer </span> </li>';
-									discussionexpand +='<li><img src="'+ row.author.avatarURL + '" width=\'25px\' height=\'25px\' border=\'0\'/> by ';
+									discussionexpand +='<li><img src="'+ row.author.avatarURL + '" width=\'25px\' height=\'25px\' border=\'0\'/> by &nbsp;';
 									discussionexpand +='<a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+row.author.username+'>'+row.author.name+'</a>';
-									discussionexpand +='on  '+ row.creationDate+ '</li>';
+									discussionexpand +='on &nbsp; '+ newDate + '</li>';
 									discussionexpand +='<li>'+row.content.text+ '</li>';
 									discussionexpand +='</ul>';
 									discussionexpand +='</div>';
@@ -103,13 +115,18 @@ function expand(id){
 								}
 								else
 								{
+									myDate=row.creationDate.substr(0,10);                  
+									myDate=myDate.split("-"); 
+									dateM=myDate[1];
+									var finalMonth=monthConvert(dateM);
+									var newDate=finalMonth+" "+myDate[2]+","+myDate[0]; 
 									console.log("I'm inside expand if");
 									discussionexpand +='<div>';
 									discussionexpand +='<ul>';
 									discussionexpand +='<li><span style="color:grey;font-weight:bold">Answer </span> </li>';
-									discussionexpand +='<li><img src="'+ row.author.avatarURL + '" width=\'25px\' height=\'25px\' border=\'0\'/> by ';
+									discussionexpand +='<li><img src="'+ row.author.avatarURL + '" width=\'25px\' height=\'25px\' border=\'0\'/> by &nbsp; ';
 									discussionexpand +='<a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+row.author.username+'>'+row.author.name+'</a>';
-									discussionexpand +='on  '+ row.creationDate+ '</li>';
+									discussionexpand +='on &nbsp; '+ newDate + '</li>';
 									discussionexpand +='<li>'+row.content.text+ '</li>';
 									discussionexpand +='</ul>';
 									discussionexpand +='</div>';
