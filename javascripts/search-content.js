@@ -64,6 +64,7 @@ function expand(id){
 	var helfulanswer="";
 	var discussionroot="";
 	var myDate="";
+	
 	var request = osapi.jive.core.discussions.get({id: id});
 	request.execute(function(response) { 
 		console.log("Expanding discussion response is " + JSON.stringify(response.data));
@@ -79,7 +80,7 @@ function expand(id){
 					
 					 $.each(result, function(index, row) {
 							console.log("Expanding discussion container response is " + JSON.stringify(response.data));
-							
+							var count=0;
 							if(row.answer){
 									myDate=row.creationDate.substr(0,10);                  
 									myDate=myDate.split("-"); 
@@ -96,7 +97,7 @@ function expand(id){
 									correctanswer +='<li>'+row.content.text+ '</li>';
 									correctanswer +='</ul>';
 									correctanswer +='</div>';
-									discussionMessage +=correctanswer;
+									
 								}
 							if(row.helpful){
 									myDate=row.creationDate.substr(0,10);                  
@@ -114,7 +115,16 @@ function expand(id){
 									helfulanswer +='<li>'+row.content.text+ '</li>';
 									helfulanswer +='</ul>';
 									helfulanswer +='</div>';
-									discussionMessage +=helfulanswer
+									
+								}
+								if(count==0)
+								{
+									discussionMessage +=correctanswer;
+									count++;
+								}
+								if(count>0)
+								{
+									discussionMessage +=helfulanswer;
 								}
 								
 								console.log("Html Content:: "+discussionMessage);
