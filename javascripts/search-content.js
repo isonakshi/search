@@ -240,9 +240,11 @@ function search() {
                
 			  if(row.type=="document")
                {
+				var docID = (url.substring(url.lastIndexOf("-"))).substr(1);
                      document +='<div>';
 		    document +='<ul>';
                     document +='<li class="document" ><a href="'+url+'" target="_apps">'+subject+'</a></li>';
+					 discussion +='<li class="image-button" id="'+docID+'" ></li>';
                     document +='</ul>';
                     
                     document +='<font size="2" color="grey">';
