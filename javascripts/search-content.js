@@ -87,9 +87,9 @@ function expand(id){
 									discussionexpand +='<div>';
 									discussionexpand +='<ul>';
 									discussionexpand +='<li><span style="color:Green;font-weight:bold">Correct Answer</span> </li>';
-									discussionexpand +='<li><img src="'+ row.author.avatarURL + '" width=\'25px\' height=\'25px\' border=\'0\'/> by &nbsp;';
+									discussionexpand +='<li><img src="'+ row.author.avatarURL + '" width=\'25px\' height=\'25px\' border=\'0\'/> by&nbsp;';
 									discussionexpand +='<a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+row.author.username+'>'+row.author.name+'</a>';
-									discussionexpand +='on &nbsp; ' + newDate+ '</li>';
+									discussionexpand +='&nbsp;on&nbsp; ' + newDate+ '</li>';
 									discussionexpand +='<li>'+row.content.text+ '</li>';
 									discussionexpand +='</ul>';
 									discussionexpand +='</div>';
@@ -104,10 +104,10 @@ function expand(id){
 									console.log("I'm inside expand if");
 									discussionexpand +='<div>';
 									discussionexpand +='<ul>';
-									discussionexpand +='<li><span style="color:Yellow;font-weight:bold">Helpful Answer </span> </li>';
+									discussionexpand +='<li><span style="color:#FFBF00;font-weight:bold">Helpful Answer </span> </li>';
 									discussionexpand +='<li><img src="'+ row.author.avatarURL + '" width=\'25px\' height=\'25px\' border=\'0\'/> by &nbsp;';
 									discussionexpand +='<a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+row.author.username+'>'+row.author.name+'</a>';
-									discussionexpand +='on &nbsp; '+ newDate + '</li>';
+									discussionexpand +='&nbsp;on&nbsp; '+ newDate + '</li>';
 									discussionexpand +='<li>'+row.content.text+ '</li>';
 									discussionexpand +='</ul>';
 									discussionexpand +='</div>';
@@ -124,9 +124,9 @@ function expand(id){
 									discussionexpand +='<div>';
 									discussionexpand +='<ul>';
 									discussionexpand +='<li><span style="color:grey;font-weight:bold">Answer </span> </li>';
-									discussionexpand +='<li><img src="'+ row.author.avatarURL + '" width=\'25px\' height=\'25px\' border=\'0\'/> by &nbsp; ';
+									discussionexpand +='<li><img src="'+ row.author.avatarURL + '" width=\'25px\' height=\'25px\' border=\'0\'/> by &nbsp;';
 									discussionexpand +='<a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+row.author.username+'>'+row.author.name+'</a>';
-									discussionexpand +='on &nbsp; '+ newDate + '</li>';
+									discussionexpand +='&nbsp;on&nbsp;'+ newDate + '</li>';
 									discussionexpand +='<li>'+row.content.text+ '</li>';
 									discussionexpand +='</ul>';
 									discussionexpand +='</div>';
