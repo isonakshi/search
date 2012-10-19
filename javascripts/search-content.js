@@ -74,7 +74,7 @@ function expand(id){
 			console.log("Error in get: "+response.error.message);
 		}
 		else{
-			/*$.each(discussionresult, function(index, row) {
+			
 			
 				console.log("I'm inside Root Message Div");
 				rootmessage +='<div>';
@@ -83,7 +83,7 @@ function expand(id){
 				rootmessage +='</ul>';
 				rootmessage +='</div>';
 				
-			});*/
+			
 			
 			var request = response.data.messages.get( ) ;
 			request.execute(function(response) {
