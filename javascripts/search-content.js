@@ -76,6 +76,7 @@ function expand(id){
 			rootmessage +='<li ><a href="'+row.message.resources.html.ref+'" target="_apps">'+row.message.subject+'</a></li>';
 			rootmessage +='</ul>';
 			rootmessage +='</div>';
+			}
 		});
 		if (response.error) {
 			console.log("Error in get: "+response.error.message);
