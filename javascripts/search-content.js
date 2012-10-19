@@ -75,14 +75,14 @@ function expand(id){
 		}
 		else{
 			$.each(discussionresult, function(index, row) {
-			if(row.question){
+			
 				console.log("I'm inside Root Message Div");
 				rootmessage +='<div>';
 				rootmessage +='<ul>';
 				rootmessage +='<li ><a href="'+row.message.resources.html.ref+'" target="_apps">'+row.message.subject+'</a></li>';
 				rootmessage +='</ul>';
 				rootmessage +='</div>';
-				}
+				
 			});
 			
 			var request = response.data.messages.get( ) ;
