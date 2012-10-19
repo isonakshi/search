@@ -59,7 +59,10 @@ function expand(id){
 	$('.firstdiv').css('background-color', '#FFFFFF');
 	$('#div_'+id).css('background-color', '#F2F2F2');
 	console.log("Expand Row Id::: "+ id);
-	var discussionexpand="";
+	var discussionMessage="";
+	var correctanswer="";
+	var helfulanswer="";
+	var discussionroot="";
 	var myDate="";
 	var request = osapi.jive.core.discussions.get({id: id});
 	request.execute(function(response) { 
@@ -84,57 +87,39 @@ function expand(id){
 									var finalMonth=monthConvert(dateM);
 									var newDate=finalMonth+" "+myDate[2]+","+myDate[0]; 
 									console.log("I'm inside expand if");
-									discussionexpand +='<div>';
-									discussionexpand +='<ul>';
-									discussionexpand +='<li><span style="color:Green;font-weight:bold">Correct Answer</span> </li>';
-									discussionexpand +='<li><img src="'+ row.author.avatarURL + '" width=\'25px\' height=\'25px\' border=\'0\'/> by&nbsp;';
-									discussionexpand +='<a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+row.author.username+'>'+row.author.name+'</a>';
-									discussionexpand +='&nbsp;on&nbsp; ' + newDate+ '</li>';
-									discussionexpand +='<li>'+row.content.text+ '</li>';
-									discussionexpand +='</ul>';
-									discussionexpand +='</div>';
+									correctanswer +='<div>';
+									correctanswer +='<ul>';
+									correctanswer +='<li><span style="color:Green;font-weight:bold">Correct Answer</span> </li>';
+									correctanswer +='<li><img src="'+ row.author.avatarURL + '" width=\'25px\' height=\'25px\' border=\'0\'/> by&nbsp;';
+									correctanswer +='<a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+row.author.username+'>'+row.author.name+'</a>';
+									correctanswer +='&nbsp;on&nbsp; ' + newDate+ '</li>';
+									correctanswer +='<li>'+row.content.text+ '</li>';
+									correctanswer +='</ul>';
+									correctanswer +='</div>';
 								
 								}
-								else if(row.helpful){
+							if(row.helpful){
 									myDate=row.creationDate.substr(0,10);                  
 									myDate=myDate.split("-"); 
 									dateM=myDate[1];
 									var finalMonth=monthConvert(dateM);
 									var newDate=finalMonth+" "+myDate[2]+","+myDate[0]; 
 									console.log("I'm inside expand if");
-									discussionexpand +='<div>';
-									discussionexpand +='<ul>';
-									discussionexpand +='<li><span style="color:#FFBF00;font-weight:bold">Helpful Answer </span> </li>';
-									discussionexpand +='<li><img src="'+ row.author.avatarURL + '" width=\'25px\' height=\'25px\' border=\'0\'/> by &nbsp;';
-									discussionexpand +='<a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+row.author.username+'>'+row.author.name+'</a>';
-									discussionexpand +='&nbsp;on&nbsp; '+ newDate + '</li>';
-									discussionexpand +='<li>'+row.content.text+ '</li>';
-									discussionexpand +='</ul>';
-									discussionexpand +='</div>';
+									helfulanswer +='<div>';
+									helfulanswer +='<ul>';
+									helfulanswer +='<li><span style="color:#FFBF00;font-weight:bold">Helpful Answer </span> </li>';
+									helfulanswer +='<li><img src="'+ row.author.avatarURL + '" width=\'25px\' height=\'25px\' border=\'0\'/> by &nbsp;';
+									helfulanswer +='<a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+row.author.username+'>'+row.author.name+'</a>';
+									helfulanswer +='&nbsp;on&nbsp; '+ newDate + '</li>';
+									helfulanswer +='<li>'+row.content.text+ '</li>';
+									helfulanswer +='</ul>';
+									helfulanswer +='</div>';
 								
 								}
-								else
-								{
-									myDate=row.creationDate.substr(0,10);                  
-									myDate=myDate.split("-"); 
-									dateM=myDate[1];
-									var finalMonth=monthConvert(dateM);
-									var newDate=finalMonth+" "+myDate[2]+","+myDate[0]; 
-									console.log("I'm inside expand if");
-									discussionexpand +='<div>';
-									discussionexpand +='<ul>';
-									discussionexpand +='<li><span style="color:grey;font-weight:bold">Answer </span> </li>';
-									discussionexpand +='<li><img src="'+ row.author.avatarURL + '" width=\'25px\' height=\'25px\' border=\'0\'/> by &nbsp;';
-									discussionexpand +='<a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+row.author.username+'>'+row.author.name+'</a>';
-									discussionexpand +='&nbsp;on&nbsp;'+ newDate + '</li>';
-									discussionexpand +='<li>'+row.content.text+ '</li>';
-									discussionexpand +='</ul>';
-									discussionexpand +='</div>';
-								
-								}
-								console.log("Html Content:: "+discussionexpand);
+								discussionMessage +=correctanswer +'<br>'+helfulanswer;
+								console.log("Html Content:: "+discussionMessage);
 								$(".content").show();
-								$(".content").html(discussionexpand);
+								$(".content").html(discussionMessage);
 					
 					});
 				
