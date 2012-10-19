@@ -283,6 +283,11 @@ function search() {
 			  if(row.type=="document")
                {
 				var docID = (url.substring(url.lastIndexOf("-"))).substr(1);
+			var request = osapi.jive.core.documents.get({id: docID});
+
+request.execute(function(response) { 
+console.log("Document is"+response.data);
+});
                      document +='<div>';
 		    document +='<ul>';
                     document +='<li class="document" ><a href="'+url+'" target="_apps">'+subject+'</a></li>';
@@ -305,7 +310,6 @@ function search() {
                      
                     document +='<font size="2" color="grey">';
                     document +='<ul>';                                       
-                   // document +='<li>Created:'+createdDate+'</li>';
                     document +='<li>Date:'+newDate+'</li>';                  
                     document +='Replies:'+replyCount+'';                  
                     document +='<li>Likes:'+likeCount+'</li>';              
