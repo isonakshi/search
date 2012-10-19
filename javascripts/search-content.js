@@ -69,20 +69,22 @@ function expand(id){
 	request.execute(function(response) { 
 		console.log("Expanding discussion response is " + JSON.stringify(response.data));
 		var discussionresult=response.data;
-		$.each(discussionresult, function(index, row) {
-		if(row.question){
-			console.log("I'm inside Root Message Div");
-			rootmessage +='<div>';
-			rootmessage +='<ul>';
-			rootmessage +='<li ><a href="'+row.message.resources.html.ref+'" target="_apps">'+row.message.subject+'</a></li>';
-			rootmessage +='</ul>';
-			rootmessage +='</div>';
-			}
-		});
+		
 		if (response.error) {
 			console.log("Error in get: "+response.error.message);
 		}
 		else{
+			$.each(discussionresult, function(index, row) {
+			if(row.question){
+				console.log("I'm inside Root Message Div");
+				rootmessage +='<div>';
+				rootmessage +='<ul>';
+				rootmessage +='<li ><a href="'+row.message.resources.html.ref+'" target="_apps">'+row.message.subject+'</a></li>';
+				rootmessage +='</ul>';
+				rootmessage +='</div>';
+				}
+			});
+			
 			var request = response.data.messages.get( ) ;
 			request.execute(function(response) {
 			var result = response.data;
