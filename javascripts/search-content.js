@@ -97,6 +97,7 @@ function expand(id){
 									correctanswer +='<li>'+row.content.text+ '</li>';
 									correctanswer +='</ul>';
 									correctanswer +='</div>';
+									discussionMessage +=correctanswer;
 									
 								}
 							if(row.helpful){
@@ -115,23 +116,16 @@ function expand(id){
 									helfulanswer +='<li>'+row.content.text+ '</li>';
 									helfulanswer +='</ul>';
 									helfulanswer +='</div>';
+									discussionMessage +=helfulanswer;
 									
 								}
-								if(count==0)
-								{
-									discussionMessage +=correctanswer;
-									count++;
-								}
-								if(count>0)
-								{
-									discussionMessage +=helfulanswer;
-								}
+																
 								
-								console.log("Html Content:: "+discussionMessage);
-								$(".content").show();
-								$(".content").html(discussionMessage);
 					
 					});
+					console.log("Html Content:: "+discussionMessage);
+								$(".content").show();
+								$(".content").html(discussionMessage);
 				
 				}
 			
