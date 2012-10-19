@@ -79,7 +79,7 @@ function expand(id){
 				console.log("I'm inside Root Message Div");
 				rootmessage +='<div>';
 				rootmessage +='<ul>';
-				rootmessage +='<li >'+messages.root.subject+'</a></li>';
+				rootmessage +='<li >'+discussionresult.messages.root.subject+'</a></li>';
 				rootmessage +='</ul>';
 				rootmessage +='</div>';
 				
