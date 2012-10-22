@@ -363,12 +363,10 @@ console.log("HTML is"+JSON.stringify(response.data));
 	            if(row.type=="post")
                {
 
-			var request = osapi.jive.core.posts.get();
+			
+console.log("Blog URL is "+url);
 
-request.execute(function(response) { 
-console.log("Blog Post is"+JSON.stringify(response.data));
 
-});
                      post +='<div>';
 	             post +='<ul>';
                      post +='<li class="post" ><a href="'+url+'" target="_apps">'+subject+'</a></li>';
