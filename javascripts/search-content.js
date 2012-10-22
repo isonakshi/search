@@ -367,6 +367,10 @@ console.log("HTML is"+JSON.stringify(response.data));
 var request = osapi.jive.core.blogs.get({id: 3904});
 request.execute(function(response) { 
 console.log("Blog Post is"+JSON.stringify(response.data));
+var request = blog.posts.get({limit:5});
+request.execute(function(response) { 
+console.log("Posts in blog"+JSON.stringify(response.data));
+});
 });
 
                      post +='<div>';
