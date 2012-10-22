@@ -362,6 +362,10 @@ console.log("HTML is"+JSON.stringify(response.data));
                 
 	            if(row.type=="post")
                {
+var request=response.data.get();
+request.execute(function(response) {
+console.log("BlogPost is"+JSON.stringify(response.data));
+});
 			
                      post +='<div>';
 	             post +='<ul>';
