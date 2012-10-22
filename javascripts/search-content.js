@@ -287,7 +287,7 @@ function search() {
 
 request.execute(function(response) { 
 console.log("Document is"+JSON.stringify(response.data));
-var request=response.data.html.get();
+var request=response.data.get();
 request.execute(function(response) {
 console.log("HTML is"+JSON.stringify(response.data));
 });
@@ -362,6 +362,7 @@ console.log("HTML is"+JSON.stringify(response.data));
                 
 	            if(row.type=="post")
                {
+			
                      post +='<div>';
 	             post +='<ul>';
                      post +='<li class="post" ><a href="'+url+'" target="_apps">'+subject+'</a></li>';
