@@ -287,7 +287,7 @@ function search() {
 
 request.execute(function(response) { 
 console.log("Document is"+JSON.stringify(response.data));
-var request=response.data.html.get();
+var request=response.data.html.ref();
 request.execute(function(response) {
 console.log("HTML is"+JSON.stringify(response.data));
 });
